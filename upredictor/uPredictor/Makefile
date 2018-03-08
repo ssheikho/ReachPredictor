@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sara/Documents/upredictor/uPredictor
+CMAKE_SOURCE_DIR = "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sara/Documents/upredictor/uPredictor
+CMAKE_BINARY_DIR = "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sara/Documents/upredictor/uPredictor/CMakeFiles /home/sara/Documents/upredictor/uPredictor/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/CMakeFiles" "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sara/Documents/upredictor/uPredictor/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -228,6 +228,19 @@ ubcutil/fast:
 .PHONY : ubcutil/fast
 
 #=============================================================================
+# Target rules for targets named UBCViconSimpleGeometry
+
+# Build rule for target.
+UBCViconSimpleGeometry: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 UBCViconSimpleGeometry
+.PHONY : UBCViconSimpleGeometry
+
+# fast build rule for target.
+UBCViconSimpleGeometry/fast:
+	$(MAKE) -f UBCViconSimpleGeometry/CMakeFiles/UBCViconSimpleGeometry.dir/build.make UBCViconSimpleGeometry/CMakeFiles/UBCViconSimpleGeometry.dir/build
+.PHONY : UBCViconSimpleGeometry/fast
+
+#=============================================================================
 # Target rules for targets named EllipseFit
 
 # Build rule for target.
@@ -296,6 +309,7 @@ help:
 	@echo "... ubcsimplegeometry"
 	@echo "... ubctrackercuda"
 	@echo "... ubcutil"
+	@echo "... UBCViconSimpleGeometry"
 	@echo "... EllipseFit"
 	@echo "... PathPlanning"
 	@echo "... ForwardKinematicsWAM"

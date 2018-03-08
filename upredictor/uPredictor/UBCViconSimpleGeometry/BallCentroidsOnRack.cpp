@@ -1,8 +1,4 @@
-#include "csv.h"
-#include "ParseCSV.h"
-
 #include "BallCentroidsOnRack.h"
-#include <UBCUtil.h>
 
 std::vector<std::string> BallCentroidsOnRack::_rackMarkers = {
 	"rackM1_X", "rackM1_Y", "rackM1_Z",
@@ -29,14 +25,14 @@ BallCentroidsOnRack::~BallCentroidsOnRack(){}
 void BallCentroidsOnRack::setMarkerLocs(){
 	
 	int colNo = 0;
-	int nRows = countRows(_inLine, _rackMarkers[colNo]);
+	int nRows = countRowsCSV(_inLine, _rackMarkers[colNo]);
 
 	MatrixXd outMatRack(nRows,_nCols);
 	MatrixXd rackMarkerLocRow(1,_nCols);	
 	
 	
 	while (colNo < _nCols-2){
-		fillMat(colNo, _inLine, _rackMarkers[colNo], 
+		fillMatCSV(colNo, _inLine, _rackMarkers[colNo], 
 			_rackMarkers[colNo + 1], 			_rackMarkers[colNo + 2], outMatRack);
 		
 		colNo = colNo + 3;

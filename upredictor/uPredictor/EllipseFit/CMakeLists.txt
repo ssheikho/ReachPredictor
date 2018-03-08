@@ -1,3 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+
+cmake_policy(SET CMP0054 OLD)
+cmake_policy(SET CMP0045 OLD)
+
 project(UBCGUIExample)
 
 include(${CMAKE_CURRENT_LIST_DIR}/../ProjectIncludes.cmake.in)
@@ -117,7 +122,7 @@ target_link_libraries(EllipseFit
 	glut
 
 	#nvvm
-	cudart
+	#cudart
 	#OpenCL
 
 	${OpenCL_LIBRARIES}

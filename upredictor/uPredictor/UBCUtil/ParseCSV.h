@@ -10,8 +10,8 @@ using namespace std;
 
 string getWholeFile(string fileName);
 int countCols(string inLine);
-int countRows(string inMat, string inCol);
-void fillMat(int inColNo, string inLine, string inX,
+int countRowsCSV(string inMat, string inCol);
+void fillMatCSV(int inColNo, string inLine, string inX,
 	 string inY, string inZ, MatrixXd &mat);
 MatrixXd parseCSV(string inMat);
 

@@ -3,6 +3,7 @@
 #include "ParseCSV.h"
 
 #include "BallCentroidsOnRack.h"
+#include "BallCentroidsOnRamp.h"
 #include <UBCUtil.h>
 
 #include <Eigen/Dense>
@@ -14,11 +15,16 @@ using namespace std;
 
 int main(int argc, char **argv) {
 
-	string inLine = "2016_10_26_participant1_1_test.csv";
-	BallCentroidsOnRack bcr(inLine);
+	string inLine = "2016_10_28_empty_Setup2.csv";
+	BallCentroidsOnRack bcRack(inLine);
 	
-	MatrixXd ballsCentroids = bcr.getBallCentroids();
-	cout <<ballsCentroids<<endl;
+	MatrixXd ballsCentroidsbcRack = bcRack.getBallCentroids();
+	cout <<"balls Centroids on Rack: " <<endl; 
+	cout << bcRack.getBallCentroids() << endl;
+
+	BallCentroidsOnRamp bcRamp(inLine);
+	cout <<"markers Centroids on Ramp: " <<endl; 
+	cout << bcRamp.getMarkerLocs() << endl;
 	
 	return 0;
 }

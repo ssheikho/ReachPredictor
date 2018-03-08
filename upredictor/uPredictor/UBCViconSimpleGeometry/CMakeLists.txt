@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+
 project(UBCViconSimpleGeometry)
 
 include(${CMAKE_CURRENT_LIST_DIR}/../ProjectIncludes.cmake.in)
@@ -16,8 +18,10 @@ pkg_check_modules(GTK REQUIRED "gtk+-3.0")
 
 set(ubc_vicon_simple_geometry_src
 	
-	UBCViconSimpleGeometry.cpp
 	BallCentroidsOnRack.cpp
+	BallCentroidsOnRamp.cpp
+
+	UBCViconSimpleGeometry.cpp
 )
 
 include_directories(
@@ -54,6 +58,7 @@ include_directories(
 )
 
 link_directories(
+
 	../UBCCamera/
 	../UBCColorTrackCUDA/
 	../UBCDART/
@@ -109,7 +114,7 @@ target_link_libraries(UBCViconSimpleGeometry
 	glut
 
 	#nvvm
-	cudart
+	#cudart
 	#OpenCL
 
 	${OpenCL_LIBRARIES}

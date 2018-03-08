@@ -30,7 +30,7 @@ int countCols(string inLine) {
 	return ctr;
 }
 
-int countRows(string inMat, string inCol) {
+int countRowsCSV(string inMat, string inCol) {
 
 	io::CSVReader<1> in(inMat);
 	in.read_header(io::ignore_extra_column, inCol);
@@ -43,9 +43,9 @@ int countRows(string inMat, string inCol) {
 
 }
 
-void fillMat(int inColNo, string inLine, string inX, string inY, string inZ, MatrixXd &mat) {
+void fillMatCSV(int inColNo, string inLine, string inX, string inY, string inZ, MatrixXd &mat) {
 
-	int nRows = countRows(inLine, inX);
+	int nRows = countRowsCSV(inLine, inX);
 	int nCols = 3;
 
 	io::CSVReader<3> in(inLine);

@@ -1,3 +1,5 @@
+cmake_policy(SET CMP0015 OLD)
+
 project(UBCCAMERA)
 
 set(CMAKE_BUILD_TYPE Debug)

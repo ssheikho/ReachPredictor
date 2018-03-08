@@ -12,6 +12,7 @@ set(ubc_util_src
 	#LameLock.cpp
 	LongValueArrayEU.cpp
 	ParseMathematica.cpp
+	ParseCSV.cpp
 	Pause.cpp
 	RefCounter.cpp
 	ShutdownContainer.cpp

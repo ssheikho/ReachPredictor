@@ -4,6 +4,8 @@
 #include <Eigen/Core>
 #include <string>
 
+#include "ParseCSV.h"
+#include <UBCUtil.h>
 using namespace Eigen;
 using namespace std;
 

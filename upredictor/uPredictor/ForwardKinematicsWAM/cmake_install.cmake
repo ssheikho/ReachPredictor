@@ -1,4 +1,4 @@
-# Install script for directory: /home/sara/Documents/upredictor/uPredictor/ForwardKinematicsWAM
+# Install script for directory: /home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/ForwardKinematicsWAM
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
