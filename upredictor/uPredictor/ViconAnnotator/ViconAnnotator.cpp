@@ -2,7 +2,7 @@
 #include "csv.h"
 #include <fstream>
 #include <iostream>
-#include "ViconFunctions.h"
+#include "WristDisplacement.h"
 
 #include <deque>
 #include <fstream>
@@ -16,12 +16,19 @@
 using namespace std;
 
 int main(int argc, char **argv) {
-	ifstream f(argv[1]);
-	
- 	
-	ViconData *vd = loadVD(f);
+	string inLine = "2016_10_26_participant1_1_90_407.csv";
+ 	WristDisplacement wd(inLine);
+	//ViconData *vd = loadVD(f);
 
-	f.close();
+	MatrixXd wPosAcrossCols = wd.getWristDisplacementAcrossCols();
+	//cout <<"Wrist Displacement Across Cols: " << endl; 
+	//cout << wPosAcrossCols << endl;
+
+	MatrixXd speed = simpleGradientAcrossCols(wPosAcrossCols);\
+
+
+	printEigenMathematica(wPosAcrossCols, cout, "position");
+	printEigenMathematica(speed, cout, "speed");
 
 	return 0;
 }

@@ -6,5 +6,5 @@
 #include <map>
 
 std::pair<Eigen::MatrixXd, Eigen::MatrixXd> solveEigensystem(Eigen::MatrixXd a);
-
+Eigen::MatrixXd buildCovMatPCA(Eigen::MatrixXd inPts3D);
 #endif

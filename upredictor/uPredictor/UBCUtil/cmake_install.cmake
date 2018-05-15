@@ -1,4 +1,4 @@
-# Install script for directory: /home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/UBCUtil
+# Install script for directory: /home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/UBCUtil
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

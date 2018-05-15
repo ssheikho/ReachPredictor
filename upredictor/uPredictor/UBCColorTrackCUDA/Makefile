@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor"
+CMAKE_SOURCE_DIR = "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor"
+CMAKE_BINARY_DIR = "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/CMakeFiles" "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/UBCColorTrackCUDA/CMakeFiles/progress.marks"
-	cd "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f CMakeFiles/Makefile2 UBCColorTrackCUDA/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/CMakeFiles" 0
+	cd "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/CMakeFiles" "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/UBCColorTrackCUDA/CMakeFiles/progress.marks"
+	cd "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f CMakeFiles/Makefile2 UBCColorTrackCUDA/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f CMakeFiles/Makefile2 UBCColorTrackCUDA/clean
+	cd "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f CMakeFiles/Makefile2 UBCColorTrackCUDA/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f CMakeFiles/Makefile2 UBCColorTrackCUDA/preinstall
+	cd "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f CMakeFiles/Makefile2 UBCColorTrackCUDA/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f CMakeFiles/Makefile2 UBCColorTrackCUDA/preinstall
+	cd "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f CMakeFiles/Makefile2 UBCColorTrackCUDA/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/rule:
-	cd "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f CMakeFiles/Makefile2 UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/rule
+	cd "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f CMakeFiles/Makefile2 UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/rule
 .PHONY : UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ UBColorTrackCuda: UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/rule
 
 # fast build rule for target.
 UBColorTrackCuda/fast:
-	cd "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/build.make UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/build
+	cd "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/build.make UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/build
 .PHONY : UBColorTrackCuda/fast
 
 CUDAColorSegInterface.o: CUDAColorSegInterface.cpp.o
@@ -131,7 +131,7 @@ CUDAColorSegInterface.o: CUDAColorSegInterface.cpp.o
 
 # target to build an object file
 CUDAColorSegInterface.cpp.o:
-	cd "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/build.make UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/CUDAColorSegInterface.cpp.o
+	cd "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/build.make UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/CUDAColorSegInterface.cpp.o
 .PHONY : CUDAColorSegInterface.cpp.o
 
 CUDAColorSegInterface.i: CUDAColorSegInterface.cpp.i
@@ -140,7 +140,7 @@ CUDAColorSegInterface.i: CUDAColorSegInterface.cpp.i
 
 # target to preprocess a source file
 CUDAColorSegInterface.cpp.i:
-	cd "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/build.make UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/CUDAColorSegInterface.cpp.i
+	cd "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/build.make UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/CUDAColorSegInterface.cpp.i
 .PHONY : CUDAColorSegInterface.cpp.i
 
 CUDAColorSegInterface.s: CUDAColorSegInterface.cpp.s
@@ -149,7 +149,7 @@ CUDAColorSegInterface.s: CUDAColorSegInterface.cpp.s
 
 # target to generate assembly for a file
 CUDAColorSegInterface.cpp.s:
-	cd "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/build.make UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/CUDAColorSegInterface.cpp.s
+	cd "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor" && $(MAKE) -f UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/build.make UBCColorTrackCUDA/CMakeFiles/UBColorTrackCuda.dir/CUDAColorSegInterface.cpp.s
 .PHONY : CUDAColorSegInterface.cpp.s
 
 # Help Target
@@ -175,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

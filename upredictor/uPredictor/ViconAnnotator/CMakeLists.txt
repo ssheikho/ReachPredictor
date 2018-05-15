@@ -15,6 +15,7 @@ pkg_check_modules(GTK REQUIRED "gtk+-3.0")
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GTK_CFLAGS}")
 
 set(ubc_vicon_annotator_src
+	WristDisplacement.cpp
 	NameCrossIndex.cpp
 	ViconData.cpp
 	ViconFunctions.cpp

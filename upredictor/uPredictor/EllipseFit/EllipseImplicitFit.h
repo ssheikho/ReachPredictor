@@ -2,8 +2,9 @@
 #define ELLIPSE_IMPLICIT_FIT_H
 
 #include "FitFunctions.h"
+//#include "BaysFitFunctions.h"
 #include "Plane.h"
-#include <UBCUtil.h>
+#include "UBCUtil.h"
 
 #include <cmath>
 
@@ -11,66 +12,38 @@
 
 using namespace std;
 
-template<typename T>
+//template<typename T>
 class EllipseImplicitFit {
 public:
-	EllipseImplicitFit(Matrix<T, Dynamic, Dynamic> inPtsAlongColsHom) :
-		_inPtsAlongCols(inPtsAlongColsHom)
-		, _plane(_inPtsAlongCols)
-	{
-		Vector3d zAxis(3,1);
-		zAxis << 0.0, 0.0, 1.0;
-		_dotProduct = _plane.getPlaneNormalVectN().dot(zAxis);
-		_crossProduct = _plane.getPlaneNormalVectN().cross(zAxis);
 
-		_rotToXY =
-			AngleAxisd(atan2(_crossProduct.norm(), _dotProduct)
-				, _crossProduct.normalized()).toRotationMatrix();
-		//assuming the last element of the hom coordinate is 1!
-		_ptsXYAlongCols = _rotToXY * _inPtsAlongCols.block(0,0,3,
-					_inPtsAlongCols.cols());
-		_conicConstraintMat = buildConicConstraintMat(_ptsXYAlongCols);
-		_conicVect = svdSolve(_conicConstraintMat);
-		_conicImplicit = arrangeConicVectIntoImplicit(_conicVect);
-	}
+	EllipseImplicitFit(MatrixXd inPtsAlongColsHom);
 
-	~EllipseImplicitFit() {}
+	~EllipseImplicitFit();
 
 
-	Plane getPlane() {
-		return _plane;
-	}
+	Plane getPlane();
 
-	Matrix<T, Dynamic, Dynamic> getRotToXY() {
-		return _rotToXY;
-	}
+	MatrixXd getRotToXY();
 
-	Matrix<T, Dynamic, Dynamic> getPtsXYAlongCols() {
-		return _ptsXYAlongCols;
-	}
+	MatrixXd getPtsXYAlongCols();
 
-	Matrix<T, Dynamic, Dynamic> getConicConstraintMat() {
-		return _conicConstraintMat;
-	}
+	MatrixXd getConicConstraintMat();
 
-	Matrix<T, Dynamic, Dynamic> getConicVect() {
-		return _conicVect;
-	}
+	MatrixXd getConicVect();
 
-	Matrix<T, Dynamic, Dynamic> getConicImplicit() {
-		return _conicImplicit;
-	}
+	MatrixXd getConicImplicit();
 
 protected:
-	Matrix<T, Dynamic, Dynamic> _inPtsAlongCols;
+	MatrixXd _inPtsAlongCols;
 	Plane _plane;
 	double _dotProduct;
-	Matrix<T,3,1> _crossProduct;
-	Matrix<T, Dynamic, Dynamic> _rotToXY
+	MatrixXd _crossProduct;
+	MatrixXd _rotToXY
 			, _ptsXYAlongCols
 			, _conicConstraintMat
 			, _conicVect
 			, _conicImplicit;
+	friend class BaysFitFunctions;
 };
 
 #endif

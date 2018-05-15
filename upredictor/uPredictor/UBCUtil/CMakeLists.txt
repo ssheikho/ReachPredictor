@@ -13,6 +13,7 @@ set(ubc_util_src
 	LongValueArrayEU.cpp
 	ParseMathematica.cpp
 	ParseCSV.cpp
+	LeastSquaresGradient.cpp
 	Pause.cpp
 	RefCounter.cpp
 	ShutdownContainer.cpp

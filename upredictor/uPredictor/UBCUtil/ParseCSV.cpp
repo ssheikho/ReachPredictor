@@ -43,7 +43,18 @@ int countRowsCSV(string inMat, string inCol) {
 
 }
 
-void fillMatCSV(int inColNo, string inLine, string inX, string inY, string inZ, MatrixXd &mat) {
+int countRowsFColCSV(string inMat) {
+
+	io::CSVReader<3> in(inMat);
+	//in.read_header(io::ignore_extra_column, inCol);
+	int ctr = 0 ;
+	double x, y, z;
+	while(in.read_row(x, y, z)) ctr++;
+	return ctr;
+}
+
+void fillMatCSV(int inColNo, string inLine, string inX, 
+	string inY, string inZ, MatrixXd &mat) {
 
 	int nRows = countRowsCSV(inLine, inX);
 	int nCols = 3;
@@ -54,6 +65,7 @@ void fillMatCSV(int inColNo, string inLine, string inX, string inY, string inZ, 
 
 	int rowNo = 0;
 	while(in.read_row(inX_, inY_, inZ_) && rowNo < mat.rows()){	
+		// inX_, inY_, inZ_: contain the value from the file
 		mat(rowNo, inColNo) = inX_;
 		mat(rowNo, inColNo+1) = inY_;
 		mat(rowNo, inColNo+2) = inZ_;
@@ -62,4 +74,26 @@ void fillMatCSV(int inColNo, string inLine, string inX, string inY, string inZ, 
 		inColNo + 2;
 	}
 }
+
+void fillMatWholeCSV(int inColNo, string inLine, MatrixXd &mat) {
+
+	int nRows = countRowsFColCSV(inLine);
+	int nCols = 3;
+
+ 	io::CSVReader<3/*, trim_chars<' '>, double_quote_escape<',','\"'>*/ >in(inLine);
+	//in.read_header(io::ignore_extra_column, inX, inY, inZ);
+	double inX_, inY_, inZ_;
+
+	int rowNo = 0;
+	while(in.read_row(inX_, inY_, inZ_) && rowNo < mat.cols()){	
+		mat(inColNo, rowNo) = inX_;
+		mat(inColNo+1, rowNo) = inY_;
+		mat(inColNo+2, rowNo) = inZ_;
+
+		rowNo++;
+		inColNo + 2;
+	}
+}
+
+
 

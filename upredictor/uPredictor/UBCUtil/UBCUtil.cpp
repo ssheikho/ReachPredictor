@@ -15,6 +15,18 @@
 #include <iterator>
 #include <sstream>
 
+Eigen::MatrixXd simpleGradientAcrossCols(Eigen::MatrixXd inPts) {
+	Eigen::MatrixXd retVal(inPts.rows(), inPts.cols() - 1);
+
+	for(size_t i = 1; i < inPts.cols(); i++) {
+		for(size_t j = 0; j < inPts.rows(); j++) {
+			retVal(j, i - 1) = inPts(j, i) - inPts(j, i - 1);
+		}
+	}
+
+	return retVal;
+}
+
 Eigen::MatrixXd cartToHom(Eigen::MatrixXd inPts) {
 	Eigen::MatrixXd outPts(inPts.rows() + 1, inPts.cols());
 	outPts.block(0,0, inPts.rows(), inPts.cols()) = inPts;
@@ -41,6 +53,53 @@ Eigen::MatrixXd svdSolve(Eigen::MatrixXd inA) {
 	//cout << svd.matrixV() << endl;
 	return svd.matrixV().block(
 		0, svd.matrixV().cols() - 1, svd.matrixV().rows(), 1);
+}
+
+Eigen::MatrixXd varianceSolve(Eigen::MatrixXd inMat) {
+	Eigen::MatrixXd centered = inMat.rowwise() - inMat.colwise().mean();
+	Eigen::MatrixXd cov = (centered.adjoint() * centered) / double(inMat.rows() - 1);
+	return cov;
+}
+
+//assuming inData is a column vector
+void normalize(Eigen::MatrixXd &inData){
+		double min = inData.minCoeff();
+		double max = inData.maxCoeff();
+		double range = max - min;
+
+	for (int i = 0; i< inData.rows(); i++)
+		inData(i,0) = (inData(i,0) - min)/range;
+ 
+}
+
+double varianceSolve1D(Eigen::MatrixXd inVec) {
+	double mean = inVec.mean();
+	int n = inVec.rows();
+
+	Eigen::VectorXd varianceVec(n); 
+	double variance = 0.0;
+	for (int i = 0; i < n; i++) {
+		varianceVec(i) = pow(inVec(i,0) ,2) / double(n);
+		variance += varianceVec(i);
+	}
+	variance -= pow (mean,2);
+	return variance;
+}
+
+Eigen::MatrixXd buildCovMat(Eigen::MatrixXd inVars) {
+	int n = inVars.cols();
+	Eigen::MatrixXd cov = Eigen::MatrixXd::Zero(n,n);
+
+	for (int i = 0; i < n; i++)	cov(i,i)= inVars(i,0);
+	return cov;
+}
+
+Eigen::MatrixXd buildCovMat(double inVar, int outCovDim){
+	
+	Eigen::MatrixXd cov = Eigen::MatrixXd::Zero(outCovDim,outCovDim);
+
+	for (int i = 0; i < outCovDim; i++)	cov(i,i)= inVar;
+	return cov;
 }
 
 void copyEigenToGL(Eigen::Vector3f *from, GLfloat *to) {

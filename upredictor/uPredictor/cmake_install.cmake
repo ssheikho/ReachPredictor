@@ -1,4 +1,4 @@
-# Install script for directory: /home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor
+# Install script for directory: /home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,20 +34,21 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/UBCCamera/cmake_install.cmake")
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/UBCColorTrackCUDA/cmake_install.cmake")
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/UBCDART/cmake_install.cmake")
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/UBCKinect/cmake_install.cmake")
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/UBCKinectGUI/cmake_install.cmake")
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/UBCGUI/cmake_install.cmake")
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/UBCSimpleGeometry/cmake_install.cmake")
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/UBCTrackerCUDA/cmake_install.cmake")
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/UBCUtil/cmake_install.cmake")
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/UBCViconSimpleGeometry/cmake_install.cmake")
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/EllipseFit/cmake_install.cmake")
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/PathPlanning/cmake_install.cmake")
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/ForwardKinematicsWAM/cmake_install.cmake")
-  include("/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/GetPos/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/UBCCamera/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/UBCColorTrackCUDA/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/UBCDART/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/UBCKinect/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/UBCKinectGUI/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/UBCGUI/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/UBCSimpleGeometry/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/UBCTrackerCUDA/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/UBCUtil/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/UBCViconSimpleGeometry/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/EllipseFit/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/BayesianFit/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/PathPlanning/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/ForwardKinematicsWAM/cmake_install.cmake")
+  include("/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/GetPos/cmake_install.cmake")
 
 endif()
 
@@ -59,5 +60,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/sara/Dropbox/Reaching Study/ReachPredictor/ReachPredictor/upredictor/uPredictor/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

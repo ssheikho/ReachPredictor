@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sara/Documents/upredictor/uPredictor/ViconAnnotator
+CMAKE_SOURCE_DIR = "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/ViconAnnotator"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sara/Documents/upredictor/uPredictor/ViconAnnotator
+CMAKE_BINARY_DIR = "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/ViconAnnotator"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sara/Documents/upredictor/uPredictor/ViconAnnotator/CMakeFiles /home/sara/Documents/upredictor/uPredictor/ViconAnnotator/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/ViconAnnotator/CMakeFiles" "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/ViconAnnotator/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sara/Documents/upredictor/uPredictor/ViconAnnotator/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/sara/Dropbox/Reaching Study/GitRepo/ReachPredictor/upredictor/uPredictor/ViconAnnotator/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -213,6 +213,21 @@ ViconTrajectories.s:
 	$(MAKE) -f CMakeFiles/ViconAnnotator.dir/build.make CMakeFiles/ViconAnnotator.dir/ViconTrajectories.s
 .PHONY : ViconTrajectories.s
 
+# target to build an object file
+WristDisplacement.o:
+	$(MAKE) -f CMakeFiles/ViconAnnotator.dir/build.make CMakeFiles/ViconAnnotator.dir/WristDisplacement.o
+.PHONY : WristDisplacement.o
+
+# target to preprocess a source file
+WristDisplacement.i:
+	$(MAKE) -f CMakeFiles/ViconAnnotator.dir/build.make CMakeFiles/ViconAnnotator.dir/WristDisplacement.i
+.PHONY : WristDisplacement.i
+
+# target to generate assembly for a file
+WristDisplacement.s:
+	$(MAKE) -f CMakeFiles/ViconAnnotator.dir/build.make CMakeFiles/ViconAnnotator.dir/WristDisplacement.s
+.PHONY : WristDisplacement.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,6 +255,9 @@ help:
 	@echo "... ViconTrajectories.o"
 	@echo "... ViconTrajectories.i"
 	@echo "... ViconTrajectories.s"
+	@echo "... WristDisplacement.o"
+	@echo "... WristDisplacement.i"
+	@echo "... WristDisplacement.s"
 .PHONY : help
 
 

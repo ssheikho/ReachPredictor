@@ -35,3 +35,36 @@ std::pair<Eigen::MatrixXd, Eigen::MatrixXd>
 
 	return std::pair<MatrixXd, MatrixXd>(eigenValues, eigenVectors);
 }
+
+//X is a 3 by n matrix in which  all the 3D coordinates of the 
+//points are row-stacked.
+// X_mean is the mean coordinate, i.e., the centroid of the points. 
+MatrixXd buildCovMatPCA(MatrixXd inPts3D){
+	size_t n = inPts3D.cols();
+	MatrixXd covMat = MatrixXd::Zero(3,3);	
+	covMat = (inPts3D.colwise() - inPts3D.rowwise().mean())
+	* (inPts3D.colwise() - inPts3D.rowwise().mean()).transpose()
+	/ n;
+
+	std::pair<Eigen::MatrixXd, Eigen::MatrixXd> eigenSys 
+	= solveEigensystem(covMat); 
+
+	// diagEigMat: the diagonal matrix  with the 3  eigenvalues of covMat
+	// OrthEigVMat:orthogonal matrix row-stacking the corresponding eigenvectors
+	MatrixXd diagEigMat = MatrixXd::Identity(3,3);
+	MatrixXd OrthEigVMat = MatrixXd::Identity(3,3);
+	for (int i =0; i<3; i++)
+		diagEigMat(i,i) = eigenSys.first(i,0);
+
+	OrthEigVMat = eigenSys.second.transpose();
+
+	MatrixXd diagCov = OrthEigVMat * diagEigMat * OrthEigVMat.transpose();
+
+	//std::pair<Eigen::MatrixXd, Eigen::MatrixXd> eigSysDiagCov
+	//= solveEigensystem(diagCov); 
+	//cout << "diagEigMat:\n" << diagEigMat << endl;
+	//cout << "OrthEigVMat:\n" << OrthEigVMat << endl;
+	return diagCov;
+}
+
+

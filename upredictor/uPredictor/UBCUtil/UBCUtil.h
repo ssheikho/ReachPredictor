@@ -39,9 +39,18 @@ Eigen::Matrix<U,Eigen::Dynamic,Eigen::Dynamic>
 	return out;
 }
 
+Eigen::MatrixXd simpleGradientAcrossCols(Eigen::MatrixXd inPts);
+
 Eigen::MatrixXd cartToHom(Eigen::MatrixXd inPts);
 Eigen::MatrixXd homToCart(Eigen::MatrixXd inPts);
 Eigen::MatrixXd svdSolve(Eigen::MatrixXd inA);
+
+
+void normalize(Eigen::MatrixXd &inData);
+Eigen::MatrixXd varianceSolve (Eigen::MatrixXd inMat);
+double varianceSolve1D (Eigen::MatrixXd inVec);
+Eigen::MatrixXd buildCovMat(Eigen::MatrixXd inVars);
+Eigen::MatrixXd buildCovMat(double inVar, int outCovDim);
 
 void copyEigenToGL(Eigen::Vector3f *from, GLfloat *to);
 void copyEigenToGL(Eigen::Vector3f *from, GLfloat **to, int n);

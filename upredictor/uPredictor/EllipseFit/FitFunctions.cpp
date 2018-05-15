@@ -33,7 +33,7 @@ MatrixXd arrangeConicVectIntoImplicit(MatrixXd inVect) {
 	return retVal;
 }
 
-MatrixXd aThirtyThreeFromConicSolution(MatrixXd inVect) {
+Eigen::MatrixXd aThirtyThreeFromConicSolution(Eigen::MatrixXd inVect) {
 	Eigen::MatrixXd retVal(2,2);
 	retVal <<	inVect(0,0), inVect(1,0) / 2.0
 			,	inVect(1,0) / 2.0, inVect(2,0);

@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 2.8)
 
-cmake_policy(SET CMP0054 OLD)
-cmake_policy(SET CMP0045 OLD)
+#cmake_policy(SET CMP0054 OLD)
+#cmake_policy(SET CMP0045 OLD)
 
-project(UBCGUIExample)
+project(EllipseFit)
 
 include(${CMAKE_CURRENT_LIST_DIR}/../ProjectIncludes.cmake.in)
 #set(CMAKE_BUILD_TYPE Debug)
@@ -19,18 +19,20 @@ pkg_check_modules(GTK REQUIRED "gtk+-3.0")
 
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GTK_CFLAGS}")
 
-set(ubc_gui_example_src
-	#Ellipse.cpp
-	#Ellipse3D.cpp
-	#EllipseImplicitFit.cpp
+set(ellipse_fit_src
 	FitFunctions.cpp
-	LinearAlgebra.cpp
-	#ParseMathematica.cpp
-	Plane.cpp
+	#LinearAlgebra.cpp
+	Plane.cpp		
+	Ellipse.cpp
+	EllipseImplicitFit.cpp		
+	Ellipse3D.cpp
 	#RigidTrans2D.cpp
-	RigidTransformation.cpp
+	#RigidTransformation.cpp
 
 	EllipseFit.cpp
+
+	BaysFitFunctions.cpp
+	#BayesianFit.cpp
 )
 
 include_directories(
@@ -41,7 +43,7 @@ include_directories(
 	../UBCKinect/
 	../UBCKinectGUI/
 	../UBCSimpleGeometry/
-	../UBCUtil
+	${CMAKE_CURRENT_SOURCE_DIR}/../UBCUtil
 	../Linux/Third-Party/dart/src
 	../Linux/Third-Party/libfreenect2/
 	../Linux/Third-Party/libfreenect2/include/
@@ -73,7 +75,7 @@ link_directories(
 	../UBCGUI/
 	../UBCKinect/
 	../UBCKinectGUI/
-	../UBCUtil/
+	${CMAKE_CURRENT_SOURCE_DIR}/../UBCUtil/
 	../Linux/Third-Party/dart/lib
 	../Linux/Third-Party/libfreenect2/lib/
 	#/usr/lib/x86_64-linux-gnu/
@@ -82,7 +84,7 @@ link_directories(
 
 add_executable(
 	EllipseFit
-	${ubc_gui_example_src}
+	${ellipse_fit_src}
 )
 
 target_link_libraries(EllipseFit
